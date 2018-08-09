@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="搭建&amp;amp;设置篇Hexo前置环境安装Node.Js安装gitGit 官方版本的安装">
+<meta name="keywords" content="软件,HEXO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【软件】轻博客Hexo搭建手记">
+<meta property="og:url" content="https://wulitaotao.cc/hexo/index.html">
+<meta property="og:site_name" content="WuliTaoTao">
+<meta property="og:description" content="搭建&amp;amp;设置篇Hexo前置环境安装Node.Js安装gitGit 官方版本的安装">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-10T04:30:36.212Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【软件】轻博客Hexo搭建手记">
+<meta name="twitter:description" content="搭建&amp;amp;设置篇Hexo前置环境安装Node.Js安装gitGit 官方版本的安装">
+
+
+
+
+
+
+  <link rel="canonical" href="https://wulitaotao.cc/hexo/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【软件】轻博客Hexo搭建手记 | WuliTaoTao</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52164314-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52164314-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?374c9558148de66f480469ce55f722a2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WuliTaoTao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">青青子衿, 悠悠我心。<br>但为君故, 沉吟至今。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-note">
+    <a href="/note/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sticky-note"></i> <br />Note</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wulitaotao.cc/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="屋里韬韬">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WuliTaoTao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">【软件】轻博客Hexo搭建手记
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2015-10-19 16:12:45" itemprop="dateCreated datePublished" datetime="2015-10-19T16:12:45+08:00">2015-10-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-10 12:30:36" itemprop="dateModified" datetime="2018-05-10T12:30:36+08:00">2018-05-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/hexo/" class="leancloud_visitors" data-flag-title="【软件】轻博客Hexo搭建手记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="搭建-amp-设置篇"><a href="#搭建-amp-设置篇" class="headerlink" title="搭建&amp;设置篇"></a>搭建&amp;设置篇</h1><h2 id="Hexo前置环境安装Node-Js"><a href="#Hexo前置环境安装Node-Js" class="headerlink" title="Hexo前置环境安装Node.Js"></a>Hexo前置环境安装Node.Js</h2><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git 官方版本的安装</a><br><a id="more"></a></p>
+<h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;username&quot;</span><br><span class="line">$ git config --global user.email &quot;username@example.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>以前只使用一个 ssh key 在github上提交代码，由于工作原因，需要再添加一个ssh key在公司的 gitlab上提交代码，下面记录下配置过程，防止遗忘。<br>说明下我的环境是 Win7 + msysgit + GitBash， 相信 *nux + bash 也是同样的道理。<br>生成并添加第一个ssh key</p>
+<p>第一次使用ssh生成key，默认会在用户~（根目录）下生成 id_rsa, id_rsa.pub 2个文件；所以需要添加多个ssh key时也会生成对应的私钥和公钥。<br>$ ssh-keygen -t rsa -C “<a href="mailto:youremail@yourcompany.com" target="_blank" rel="noopener">youremail@yourcompany.com</a>“<br>在Git Bash中执行这条命令一路回车，会在 ~/.ssh/ 目录下生成 id_rsa 和 id_rsa.pub 两个文件，用文本编辑器将 id_rsa_pub 中的内容复制一下粘贴到github(gitlab)上。<br>生成并添加第二个ssh key</p>
+<p>$ ssh-keygen -t rsa -C “<a href="mailto:youremail@gmail.com" target="_blank" rel="noopener">youremail@gmail.com</a>“<br>注意不要一路回车，要给这个文件起一个名字， 比如叫 id_rsa_github, 所以相应的也会生成一个 id_rsa_github.pub 文件。</p>
+<p>目录结构如下：</p>
+<p>添加私钥</p>
+<p>$ ssh-add ~/.ssh/id_rsa<br>$ ssh-add ~/.ssh/id_rsa_github<br>如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：<br>$ ssh-agent bash<br>然后再运行ssh-add命令。</p>
+<h1 id="可以通过-ssh-add-l-来确私钥列表"><a href="#可以通过-ssh-add-l-来确私钥列表" class="headerlink" title="可以通过 ssh-add -l 来确私钥列表"></a>可以通过 ssh-add -l 来确私钥列表</h1><p>$ ssh-add -l# 可以通过 ssh-add -D 来清空私钥列表<br>$ ssh-add -D<br>修改配置文件</p>
+<p>在 ~/.ssh 目录下新建一个config文件<br>touch config<br>添加内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gitlabHost gitlab.com</span><br><span class="line">HostName gitlab.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">githubHost github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure></p>
+<p>测试</p>
+<p>$ ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>输出<br>Hi user! You’ve successfully authenticated, but GitHub does not provide shell access. 就表示成功的连上github了</p>
+<p>来源： <a href="http://www.cnblogs.com/fanyong/p/3962455.html" target="_blank" rel="noopener">http://www.cnblogs.com/fanyong/p/3962455.html</a></p>
+<h2 id="安装Node-Js"><a href="#安装Node-Js" class="headerlink" title="安装Node.Js"></a>安装Node.Js</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.Js官网</a></p>
+<hr>
+<h2 id="更新NEXT主题后出现警告"><a href="#更新NEXT主题后出现警告" class="headerlink" title="更新NEXT主题后出现警告"></a>更新NEXT主题后出现警告</h2><h3 id="Cannot-find-module-‘hexo-util’-1480"><a href="#Cannot-find-module-‘hexo-util’-1480" class="headerlink" title="Cannot find module ‘hexo-util’ #1480"></a>Cannot find module ‘hexo-util’ #1480</h3><p>$ npm install – save-dev hexo-util</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/</span><br><span class="line">&gt; hexo-util@0.6.0 postinstall D:\myblog-hexo\node_modules\hexo-util</span><br><span class="line">&gt; npm run build:highlight</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; hexo-util@0.6.0 build:highlight D:\myblog-hexo\node_modules\hexo-util</span><br><span class="line">&gt; node scripts/build_highlight_alias.js &gt; highlight_alias.json</span><br><span class="line"></span><br><span class="line">save-dev@2.0.0 node_modules\save-dev</span><br><span class="line"></span><br><span class="line">hexo-util@0.6.0 node_modules\hexo-util</span><br><span class="line">├── html-entities@1.2.0</span><br><span class="line">├── striptags@2.2.1</span><br><span class="line">├── bluebird@3.4.7</span><br><span class="line">├── highlight.js@9.9.0</span><br><span class="line">├── cross-spawn@4.0.2 (lru-cache@4.0.2, which@1.2.12)</span><br><span class="line">└── camel-case@3.0.0 (upper-case@1.1.3, no-case@2.3.1)</span><br></pre></td></tr></table></figure>
+<h1 id="一些简单的Markdown语法"><a href="#一些简单的Markdown语法" class="headerlink" title="一些简单的Markdown语法"></a>一些简单的Markdown语法</h1><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h3 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a><font color="red">四级标题</font></h3><ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+</ul>
+<blockquote>
+<p>这是引用<br>这是引用<br>这是引用</p>
+</blockquote>
+<p><em>斜体</em><br><strong> 粗体 </strong><br>普通字体</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>‘下面是多行代码块’<br><code>real k,l,module</code></p>
+<h2 id="外链"><a href="#外链" class="headerlink" title="外链"></a>外链</h2><p>插入文字超链接的格式如下 ：</p>
+<p>[code]<a href="链接地址" title="链接标题">链接文字</a>[code]</p>
+<h1 id="NEXT主题-amp-个性化篇"><a href="#NEXT主题-amp-个性化篇" class="headerlink" title="NEXT主题&amp;个性化篇"></a>NEXT主题&amp;个性化篇</h1><h2 id="增添计数器"><a href="#增添计数器" class="headerlink" title="增添计数器"></a>增添计数器</h2><h2 id="当离开这个页面的时候标题会变成我藏好了，回来时又会变成被你发现了"><a href="#当离开这个页面的时候标题会变成我藏好了，回来时又会变成被你发现了" class="headerlink" title="当离开这个页面的时候标题会变成我藏好了，回来时又会变成被你发现了"></a>当离开这个页面的时候标题会变成我藏好了，回来时又会变成被你发现了</h2><p>next\layout_macro\post.swig</p>
+<p>插一段js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var OriginTitile=document.title;</span><br><span class="line">var st;</span><br><span class="line">document.addEventListener(&apos;visibilitychange&apos;,function()&#123;</span><br><span class="line">if(document.hidden)&#123;</span><br><span class="line">document.title=&quot;(つェ⊂)i&apos;ve hidden. /我藏好了哦&quot;;</span><br><span class="line">clearTimeout(st);</span><br><span class="line">console.log(&apos;hide&apos;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">document.title=&apos;(*´∇｀*)  You found me. /被你发现啦~ &apos;+OriginTitile;</span><br><span class="line">console.log(&apos;show&apos;);</span><br><span class="line">st=setTimeout(function()&#123;</span><br><span class="line">document.title=OriginTitile;</span><br><span class="line">&#125;,40000);</span><br><span class="line">console.log(&apos;endChange=&apos;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="NexT主题底部小心心增加点击动画功能"><a href="#NexT主题底部小心心增加点击动画功能" class="headerlink" title="NexT主题底部小心心增加点击动画功能"></a>NexT主题底部小心心增加点击动画功能</h2><p>Step 0<br>确保你拥有一个以NexT为主题的Hexo博客 版本大概任意orz</p>
+<p>Step 1<br>下载<a href="https://raw.githubusercontent.com/LEAFERx/UsefulCode/master/HEXO/hexo-next-bottomheart.js" target="_blank" rel="noopener">hexo-next-bottomheart.js</a>（可以把链接复制到下载工具中或者直接新建文件然后复制粘贴），并把它保存在/themes/next/source/js/src/目录下。</p>
+<p>Step 2<br>使用文本编辑器打开/themes/next/layout/_layout.swig<br>在尾部上方新增一行（line 5），修改后的文件如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;% include &apos;_components/algolia-search/assets.swig&apos; %&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/hexo-next-bottomheart.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>Step 3<br>使用文本编辑器打开/themes/next/layout/_partials/footer.swig<br>在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;span itemprop=&quot;copyrightYear&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=&quot;with-love&quot;&gt;</span><br><span class="line">  &lt;i class=&quot;fa fa-&quot;&gt;&lt;/i&gt;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&lt;span class=&quot;author&quot; itemprop=&quot;copyrightHolder&quot;&gt;&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure><br>处，修改line 5为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;bottomheart&quot; style=&quot;cursor:pointer;&quot;&gt;&lt;i class=&quot;fa fa-&quot;&gt;&lt;/i&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>这时候，重新部署你的博客，就可以疯狂点击小心心啦</p>
+<p>Step 4<br>由于频繁点击小心心会造成周围文字不断被选中强迫症表示非常难受，所以修改css<br>使用文本编辑器打开/themes/next/layout/_partials/footer.swig<br>在.footer类中加入如下规则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-moz-user-select: none;</span><br><span class="line">-webkit-user-select: none;</span><br><span class="line">-ms-user-select: none;</span><br><span class="line">-khtml-user-select: none;</span><br><span class="line">user-select: none;</span><br></pre></td></tr></table></figure>
+<p>这样就全部完成啦</p>
+<p>参考：<a href="https://leaferx.online/2017/01/30/Bottomheart/" target="_blank" rel="noopener">leaferXlab</a></p>
+<h2 id="MIST样式LOGO更改"><a href="#MIST样式LOGO更改" class="headerlink" title="MIST样式LOGO更改"></a>MIST样式LOGO更改</h2><p> \themes\next\source\css_variables\base.styl<br>在Colors栏目添加需要的颜色。<br>示例：添加$goldenrod    = #b4a078</p>
+<p> \themes\next\source\css_variables\Mist.styl<br>更改brand-color 为新添加的颜色。<br>示例：$brand-color             = $goldenrod</p>
+<p> \themes\next\source\css_schemes\Mist_header.styl<br>更改.logo-line-before,.logo-line-after栏目下的background为新添加的颜色。<br>示例：  background: $goldenrod;</p>
+<h2 id="NEXT主题按钮颜色更改"><a href="#NEXT主题按钮颜色更改" class="headerlink" title="NEXT主题按钮颜色更改"></a>NEXT主题按钮颜色更改</h2><p> \themes\next\source\css_variables\base.styl<br>更改Buttons栏目下 为指定颜色。<br>示例：  </p>
+<h2 id="NEXT主题BACK-TO-TOP按钮颜色更改"><a href="#NEXT主题BACK-TO-TOP按钮颜色更改" class="headerlink" title="NEXT主题BACK TO TOP按钮颜色更改"></a>NEXT主题BACK TO TOP按钮颜色更改</h2><p> \themes\next\source\css_variables\base.styl<br>更改Components - Back to top栏目下$b2t-bg-color 为指定颜色。<br>示例：  $b2t-bg-color                 = $goldenrod</p>
+<h2 id="去除Coding-Pages-等待跳转页面"><a href="#去除Coding-Pages-等待跳转页面" class="headerlink" title="去除Coding Pages 等待跳转页面"></a>去除Coding Pages 等待跳转页面</h2><h2 id="最近访客栏（废弃）"><a href="#最近访客栏（废弃）" class="headerlink" title="最近访客栏（废弃）"></a>最近访客栏（废弃）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;br/&gt;</span><br><span class="line">&gt;最近访客</span><br><span class="line">&lt;div class=&quot;ds-recent-visitors&quot; data-num-items=&quot;28&quot; data-avatar-size=&quot;42&quot; id=&quot;ds-recent-visitors&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="番外篇：备份与恢复"><a href="#番外篇：备份与恢复" class="headerlink" title="番外篇：备份与恢复"></a>番外篇：备份与恢复</h1><p>可持续发展是HEXO之类本地博客最大的一个课题。</p>
+<h2 id="如何迁移？"><a href="#如何迁移？" class="headerlink" title="如何迁移？"></a>如何迁移？</h2><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>git init<br>git checkout -b source<br>git remote add origin <a href="mailto:git@git.coding.net" target="_blank" rel="noopener">git@git.coding.net</a>:repository/repository.git</p>
+<h2 id="日常备份"><a href="#日常备份" class="headerlink" title="日常备份"></a>日常备份</h2><p>git add .                          #添加blog目录下所有文件，注意有个<code>.</code>（<code>.gitignore</code>声明过的文件不包含在内)<br>git commit -m “first commit”       #添加更新说明<br>git push -u origin source        #推送更新到云端服务器</p>
+<h2 id="当重装电脑之后，或者想在其他电脑上修改博客"><a href="#当重装电脑之后，或者想在其他电脑上修改博客" class="headerlink" title="当重装电脑之后，或者想在其他电脑上修改博客"></a>当重装电脑之后，或者想在其他电脑上修改博客</h2><p>可以使用下列步骤：</p>
+<h3 id="安装git-1"><a href="#安装git-1" class="headerlink" title="安装git"></a>安装git</h3><p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git 官方版本的安装</a></p>
+<h3 id="安装Node-Js-1"><a href="#安装Node-Js-1" class="headerlink" title="安装Node.Js"></a>安装Node.Js</h3><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.Js官网</a></p>
+<h3 id="正式恢复"><a href="#正式恢复" class="headerlink" title="正式恢复"></a>正式恢复</h3><p>使用git clone <a href="mailto:git@git.coding.net" target="_blank" rel="noopener">git@git.coding.net</a>:repository/repository.git拷贝仓库（默认分支为source）；<br>在本地新拷贝的zhuoji文件夹下通过Git bash依次执行下列指令：<br>npm install hexo<br>npm install<br>npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>恢复之后遇到的问题汇总：</p>
+<h3 id="Q-hexo-command-not-found"><a href="#Q-hexo-command-not-found" class="headerlink" title="Q: hexo: command not found"></a>Q: hexo: command not found</h3><h3 id="A-把-node-modules-hexo-bin-添加到环境变量PATH处。"><a href="#A-把-node-modules-hexo-bin-添加到环境变量PATH处。" class="headerlink" title="A: 把~.\node_modules\hexo\bin 添加到环境变量PATH处。"></a>A: 把~.\node_modules\hexo\bin 添加到环境变量PATH处。</h3><h1 id="番外篇II：更新Hexo及主题"><a href="#番外篇II：更新Hexo及主题" class="headerlink" title="番外篇II：更新Hexo及主题"></a>番外篇II：更新Hexo及主题</h1>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>打赏两毛钱(つェ⊂)</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="屋里韬韬 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软件/" rel="tag"># 软件</a>
+          
+            <a href="/tags/HEXO/" rel="tag"># HEXO</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/SuikenGasshuku/" rel="next" title="【旅途】2014水圏合宿！">
+                <i class="fa fa-chevron-left"></i> 【旅途】2014水圏合宿！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/fortran/" rel="prev" title="【软件】Fortran初级篇：从入门到卧室 - 安装">
+                【软件】Fortran初级篇：从入门到卧室 - 安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc1My82MzE5"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="屋里韬韬" />
+            
+              <p class="site-author-name" itemprop="name">屋里韬韬</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/zhuobubu/" target="_blank" title="Instagram" rel="external nofollow"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建-amp-设置篇"><span class="nav-number">1.</span> <span class="nav-text">搭建&amp;设置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo前置环境安装Node-Js"><span class="nav-number">1.1.</span> <span class="nav-text">Hexo前置环境安装Node.Js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置git"><span class="nav-number">1.1.2.</span> <span class="nav-text">配置git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH"><span class="nav-number">1.1.3.</span> <span class="nav-text">配置SSH</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可以通过-ssh-add-l-来确私钥列表"><span class="nav-number">2.</span> <span class="nav-text">可以通过 ssh-add -l 来确私钥列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-Js"><span class="nav-number">2.1.</span> <span class="nav-text">安装Node.Js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新NEXT主题后出现警告"><span class="nav-number">2.2.</span> <span class="nav-text">更新NEXT主题后出现警告</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cannot-find-module-‘hexo-util’-1480"><span class="nav-number">2.2.1.</span> <span class="nav-text">Cannot find module ‘hexo-util’ #1480</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些简单的Markdown语法"><span class="nav-number">3.</span> <span class="nav-text">一些简单的Markdown语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number">4.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number">4.1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">4.1.1.</span> <span class="nav-text">三级标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四级标题"><span class="nav-number">4.1.2.</span> <span class="nav-text">四级标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">4.1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外链"><span class="nav-number">4.2.</span> <span class="nav-text">外链</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NEXT主题-amp-个性化篇"><span class="nav-number">5.</span> <span class="nav-text">NEXT主题&amp;个性化篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增添计数器"><span class="nav-number">5.1.</span> <span class="nav-text">增添计数器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当离开这个页面的时候标题会变成我藏好了，回来时又会变成被你发现了"><span class="nav-number">5.2.</span> <span class="nav-text">当离开这个页面的时候标题会变成我藏好了，回来时又会变成被你发现了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT主题底部小心心增加点击动画功能"><span class="nav-number">5.3.</span> <span class="nav-text">NexT主题底部小心心增加点击动画功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MIST样式LOGO更改"><span class="nav-number">5.4.</span> <span class="nav-text">MIST样式LOGO更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NEXT主题按钮颜色更改"><span class="nav-number">5.5.</span> <span class="nav-text">NEXT主题按钮颜色更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NEXT主题BACK-TO-TOP按钮颜色更改"><span class="nav-number">5.6.</span> <span class="nav-text">NEXT主题BACK TO TOP按钮颜色更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去除Coding-Pages-等待跳转页面"><span class="nav-number">5.7.</span> <span class="nav-text">去除Coding Pages 等待跳转页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最近访客栏（废弃）"><span class="nav-number">5.8.</span> <span class="nav-text">最近访客栏（废弃）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#番外篇：备份与恢复"><span class="nav-number">6.</span> <span class="nav-text">番外篇：备份与恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何迁移？"><span class="nav-number">6.1.</span> <span class="nav-text">如何迁移？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">6.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日常备份"><span class="nav-number">6.3.</span> <span class="nav-text">日常备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当重装电脑之后，或者想在其他电脑上修改博客"><span class="nav-number">6.4.</span> <span class="nav-text">当重装电脑之后，或者想在其他电脑上修改博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git-1"><span class="nav-number">6.4.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-Js-1"><span class="nav-number">6.4.2.</span> <span class="nav-text">安装Node.Js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正式恢复"><span class="nav-number">6.4.3.</span> <span class="nav-text">正式恢复</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">6.5.</span> <span class="nav-text">Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-hexo-command-not-found"><span class="nav-number">6.5.1.</span> <span class="nav-text">Q: hexo: command not found</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-把-node-modules-hexo-bin-添加到环境变量PATH处。"><span class="nav-number">6.5.2.</span> <span class="nav-text">A: 把~.\node_modules\hexo\bin 添加到环境变量PATH处。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#番外篇II：更新Hexo及主题"><span class="nav-number">7.</span> <span class="nav-text">番外篇II：更新Hexo及主题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">屋里韬韬</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="Total Views">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Tb8vD4jDsf5w90thlt4jiSul-gzGzoHsz", "heHQzQkYEEo21UjBtEeWMKSq");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
